@@ -1,27 +1,44 @@
+import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import CountUp from "react-countup";
 
+const STATS = [
+  { value: 120, prefix: "+", suffix: "", label: "Cidades atendidas" },
+  { value: 2500, prefix: "+", suffix: "", label: "Equipamentos gerenciados" },
+  { value: 2, prefix: "<", suffix: "h", label: "SLA médio" },
+  { value: 98, prefix: "", suffix: "%", label: "Satisfação" },
+] as const;
+
 const Hero = () => {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        duration: `${4 + Math.random() * 4}s`,
+        delay: `${Math.random() * 4}s`,
+      })),
+    [],
+  );
+
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden glow-bg">
-      {/* Grid pattern */}
       <div className="absolute inset-0 grid-pattern opacity-40" />
 
-      {/* Floating glow orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-primary-glow/20 blur-[120px] animate-pulse-glow" />
 
-      {/* Particles */}
-      {[...Array(20)].map((_, i) => (
+      {particles.map((p) => (
         <div
-          key={i}
+          key={p.id}
           className="absolute w-1 h-1 rounded-full bg-primary/60"
           style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-            animation: `float ${4 + Math.random() * 4}s ease-in-out infinite`,
-            animationDelay: `${Math.random() * 4}s`,
+            top: p.top,
+            left: p.left,
+            animation: `float ${p.duration} ease-in-out infinite`,
+            animationDelay: p.delay,
           }}
         />
       ))}
@@ -39,17 +56,7 @@ const Hero = () => {
           </span>
         </motion.div>
 
-        {/* Ghost text behind */}
         <div className="relative text-center">
-          <motion.h2
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="display-font ghost-text absolute inset-x-0 -top-6 md:-top-12 text-[14vw] md:text-[10vw] font-extrabold leading-none pointer-events-none select-none"
-            aria-hidden
-          >
-            C3
-          </motion.h2>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -57,7 +64,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="display-font relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-glow max-w-4xl mx-auto"
           >
-            Conectividade <span className="text-gradient">confiável e segura</span> para empresas em todo o Brasil
+            Conectividade{" "}
+            <span className="text-gradient">confiável e segura</span> para
+            empresas em todo o Brasil
           </motion.h1>
 
           <motion.p
@@ -66,8 +75,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground"
           >
-            Consultoria especialista em redes, Wi-Fi corporativo, firewall, backup em nuvem e monitoramento.
-            Implementamos e sustentamos ambientes de alto desempenho com pfSense, MikroTik, UniFi e Huawei.
+            Consultoria especialista em redes, Wi-Fi corporativo, firewall,
+            backup em nuvem e monitoramento. Implementamos e sustentamos
+            ambientes de alto desempenho com pfSense, MikroTik, UniFi e Huawei.
           </motion.p>
 
           <motion.div
@@ -99,33 +109,36 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-5 text-xs text-muted-foreground"
           >
-            Resposta rápida e diagnóstico gratuito · pfSense · MikroTik · UniFi · Huawei Certified
+            Resposta rápida e diagnóstico gratuito · pfSense · MikroTik · UniFi
+            · Huawei Certified
           </motion.p>
         </div>
 
-        {/* Floating stats */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto"
         >
-          {[
-            { value: 120, prefix: "+", suffix: "", label: "Cidades atendidas" },
-            { value: 2500, prefix: "+", suffix: "", label: "Equipamentos gerenciados" },
-            { value: 2, prefix: "<", suffix: "h", label: "SLA médio" },
-            { value: 98, prefix: "", suffix: "%", label: "Satisfação" },
-          ].map((s, i) => (
+          {STATS.map((s) => (
             <div
-              key={i}
+              key={s.label}
               className="rounded-xl border border-border bg-card/60 backdrop-blur-sm px-4 py-4 text-center hover:border-primary/40 transition-colors"
             >
               <div className="display-font text-2xl md:text-3xl font-extrabold text-gradient">
                 {s.prefix}
-                <CountUp end={s.value} duration={2.5} separator="." enableScrollSpy scrollSpyOnce />
+                <CountUp
+                  end={s.value}
+                  duration={2.5}
+                  separator="."
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
                 {s.suffix}
               </div>
-              <div className="text-[11px] md:text-xs text-muted-foreground mt-1">{s.label}</div>
+              <div className="text-[11px] md:text-xs text-muted-foreground mt-1">
+                {s.label}
+              </div>
             </div>
           ))}
         </motion.div>

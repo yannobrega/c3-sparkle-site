@@ -1,4 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+/* Surgena — local font */
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Surgena";
+  src: url("/fonts/Surgena-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -90,7 +162,7 @@
 
 @layer components {
   .display-font {
-    font-family: 'Syne', 'Inter', sans-serif;
+    font-family: 'Surgena', 'Inter', sans-serif;
     letter-spacing: -0.03em;
   }
 

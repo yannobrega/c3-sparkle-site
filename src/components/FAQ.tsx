@@ -1,32 +1,43 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Reveal } from "./Reveal";
 
-const faqs = [
+const FAQS = [
   {
+    id: "faq-1",
     q: "Vocês atendem em todo o Brasil?",
     a: "Sim. Temos base operacional em Araruama-RJ e atendemos remotamente todo o território nacional, com suporte presencial conforme demanda. Já cobrimos mais de 120 cidades.",
   },
   {
+    id: "faq-2",
     q: "Como funciona o suporte 24x7?",
     a: "Nossa central de monitoramento (NOC) acompanha sua infraestrutura em tempo real com SNMP, Syslog e NetFlow. Em caso de incidente, o chamado é aberto automaticamente e iniciamos o atendimento conforme o SLA contratado.",
   },
   {
+    id: "faq-3",
     q: "Com quais marcas vocês trabalham?",
     a: "Somos especialistas e certificados em pfSense, MikroTik, UniFi (Ubiquiti) e Huawei. Também atuamos com Cisco e Fortinet, sempre recomendando a melhor solução para o seu cenário.",
   },
   {
+    id: "faq-4",
     q: "Vocês oferecem diagnóstico gratuito?",
     a: "Sim! Realizamos uma avaliação inicial sem custo para identificar gargalos da sua infraestrutura e propor soluções sob medida. Solicite pelo formulário ou WhatsApp.",
   },
   {
+    id: "faq-5",
     q: "Como funciona a estratégia de backup?",
     a: "Implementamos a estratégia 3-2-1 com snapshots imutáveis, criptografia ponta-a-ponta e replicação multi-região. Realizamos testes regulares de restauração para garantir RTO < 15min e RPO < 1h.",
   },
   {
+    id: "faq-6",
     q: "O que é Zero Trust e por que adotar?",
     a: "Zero Trust é uma arquitetura baseada em autenticação contínua, microsegmentação e princípio de menor privilégio. Combina MFA, VLANs/ACLs, monitoramento 24x7 e compliance LGPD para máxima segurança.",
   },
-];
+] as const;
 
 const FAQ = () => {
   return (
@@ -41,10 +52,10 @@ const FAQ = () => {
 
         <Reveal className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((f, i) => (
+            {FAQS.map((f) => (
               <AccordionItem
-                key={i}
-                value={`item-${i}`}
+                key={f.id}
+                value={f.id}
                 className="glow-card rounded-xl px-5 border-border"
               >
                 <AccordionTrigger className="text-left display-font font-bold text-sm md:text-base hover:text-primary hover:no-underline py-5">
