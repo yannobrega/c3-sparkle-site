@@ -4,53 +4,53 @@ import { Reveal } from "./Reveal";
 const faqs = [
   {
     q: "Vocês atendem em todo o Brasil?",
-    a: "Sim. Temos bases físicas em Araruama-RJ, Goiânia-GO e Fortaleza-CE, com atendimento remoto para todo o território nacional e suporte presencial conforme demanda.",
+    a: "Sim. Temos base operacional em Araruama-RJ e atendemos remotamente todo o território nacional, com suporte presencial conforme demanda. Já cobrimos mais de 120 cidades.",
   },
   {
     q: "Como funciona o suporte 24x7?",
-    a: "Nossa central de monitoramento (NOC) acompanha sua infraestrutura em tempo real. Em caso de incidente, abrimos chamado automaticamente e iniciamos o atendimento conforme o SLA contratado.",
+    a: "Nossa central de monitoramento (NOC) acompanha sua infraestrutura em tempo real com SNMP, Syslog e NetFlow. Em caso de incidente, o chamado é aberto automaticamente e iniciamos o atendimento conforme o SLA contratado.",
   },
   {
-    q: "Preciso assinar contrato de longo prazo?",
-    a: "Trabalhamos com modelos flexíveis: pacotes pontuais, mensalidades e contratos anuais. Nosso time comercial monta a melhor proposta para o seu cenário.",
+    q: "Com quais marcas vocês trabalham?",
+    a: "Somos especialistas e certificados em pfSense, MikroTik, UniFi (Ubiquiti) e Huawei. Também atuamos com Cisco e Fortinet, sempre recomendando a melhor solução para o seu cenário.",
   },
   {
-    q: "Vocês atendem empresas de qual porte?",
-    a: "Atendemos desde pequenos escritórios até indústrias e redes com múltiplas unidades. Nossa metodologia se adapta ao seu tamanho e maturidade de TI.",
+    q: "Vocês oferecem diagnóstico gratuito?",
+    a: "Sim! Realizamos uma avaliação inicial sem custo para identificar gargalos da sua infraestrutura e propor soluções sob medida. Solicite pelo formulário ou WhatsApp.",
   },
   {
-    q: "Quais marcas de firewall e rede vocês trabalham?",
-    a: "Somos especialistas em pfSense, MikroTik, Fortinet, Ubiquiti, Cisco e Aruba. Recomendamos a melhor solução conforme orçamento e necessidade técnica.",
+    q: "Como funciona a estratégia de backup?",
+    a: "Implementamos a estratégia 3-2-1 com snapshots imutáveis, criptografia ponta-a-ponta e replicação multi-região. Realizamos testes regulares de restauração para garantir RTO < 15min e RPO < 1h.",
   },
   {
-    q: "Como funciona o backup em nuvem?",
-    a: "Implementamos backup automatizado, criptografado e com versionamento. Testamos restauração periodicamente para garantir que seus dados estarão recuperáveis quando necessário.",
+    q: "O que é Zero Trust e por que adotar?",
+    a: "Zero Trust é uma arquitetura baseada em autenticação contínua, microsegmentação e princípio de menor privilégio. Combina MFA, VLANs/ACLs, monitoramento 24x7 e compliance LGPD para máxima segurança.",
   },
 ];
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-32 relative">
+    <section id="faq" className="py-24 relative">
       <div className="container-custom relative">
-        <Reveal className="text-center max-w-3xl mx-auto mb-16">
-          <span className="section-tag mb-6">Perguntas Frequentes</span>
-          <h2 className="display-font text-4xl md:text-6xl font-extrabold leading-tight">
+        <Reveal className="text-center max-w-2xl mx-auto mb-12">
+          <span className="section-tag mb-5">Perguntas Frequentes</span>
+          <h2 className="display-font text-2xl md:text-4xl font-extrabold leading-tight">
             Tire suas <span className="text-gradient">dúvidas</span>
           </h2>
         </Reveal>
 
         <Reveal className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((f, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="glow-card rounded-2xl px-6 border-border"
+                className="glow-card rounded-xl px-5 border-border"
               >
-                <AccordionTrigger className="text-left display-font font-bold text-lg hover:text-primary hover:no-underline py-6">
+                <AccordionTrigger className="text-left display-font font-bold text-sm md:text-base hover:text-primary hover:no-underline py-5">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>

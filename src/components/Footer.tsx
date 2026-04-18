@@ -12,9 +12,9 @@ const Footer = () => {
               </div>
               <span className="display-font font-bold text-xl">Support</span>
             </div>
-            <p className="text-muted-foreground max-w-md leading-relaxed">
-              Suporte de TI corporativo, redes, segurança e infraestrutura. Para empresas que precisam de uma operação
-              sempre online.
+            <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
+              Consultoria especialista em redes, Wi-Fi corporativo, firewall, backup em nuvem e monitoramento.
+              Implementamos e sustentamos ambientes de alto desempenho.
             </p>
             <div className="flex gap-3 mt-8">
               {[Linkedin, Instagram, Facebook].map((Icon, i) => (
@@ -31,8 +31,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="display-font font-bold mb-5">Navegação</h4>
-            <ul className="space-y-3 text-muted-foreground">
+            <h4 className="display-font font-bold mb-5 text-sm">Navegação</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
               <li><a href="#servicos" className="hover:text-foreground transition-colors">Serviços</a></li>
               <li><a href="#metodologia" className="hover:text-foreground transition-colors">Metodologia</a></li>
               <li><a href="#resultados" className="hover:text-foreground transition-colors">Resultados</a></li>
@@ -43,11 +43,11 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="display-font font-bold mb-5">Bases</h4>
-            <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start gap-2"><MapPin size={16} className="text-primary mt-1 shrink-0" /> Araruama-RJ</li>
-              <li className="flex items-start gap-2"><MapPin size={16} className="text-primary mt-1 shrink-0" /> Goiânia-GO</li>
-              <li className="flex items-start gap-2"><MapPin size={16} className="text-primary mt-1 shrink-0" /> Fortaleza-CE</li>
+            <h4 className="display-font font-bold mb-5 text-sm">Contato</h4>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2"><MapPin size={14} className="text-primary mt-1 shrink-0" /> Araruama-RJ</li>
+              <li>(22) 3542-0992</li>
+              <li>contato@c3support.com.br</li>
             </ul>
             <p className="text-xs text-muted-foreground mt-4">Atendimento em todo o Brasil</p>
           </div>
