@@ -1,4 +1,5 @@
 import { Linkedin, Instagram, Facebook, MapPin } from "lucide-react";
+import logo from "@/assets/c3-logo.png";
 
 const Footer = () => {
   return (
@@ -6,11 +7,8 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow">
-                <span className="display-font text-primary-foreground font-extrabold">C3</span>
-              </div>
-              <span className="display-font font-bold text-xl">Support</span>
+            <div className="flex items-center mb-6">
+              <img src={logo} alt="C3 Support" className="h-10 w-auto" />
             </div>
             <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
               Consultoria especialista em redes, Wi-Fi corporativo, firewall, backup em nuvem e monitoramento.
