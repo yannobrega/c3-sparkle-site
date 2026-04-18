@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/c3-logo.png";
 
 const links = [
   { label: "Serviços", href: "#servicos" },
@@ -27,11 +28,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container-custom flex items-center justify-between h-20">
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow">
-            <span className="display-font text-primary-foreground font-extrabold">C3</span>
-          </div>
-          <span className="display-font font-bold text-lg tracking-tight">Support</span>
+        <a href="#" className="flex items-center group" aria-label="C3 Support">
+          <img src={logo} alt="C3 Support" className="h-9 w-auto" />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
