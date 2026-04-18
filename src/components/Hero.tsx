@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import CountUp from "react-countup";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden glow-bg">
+    <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden glow-bg">
       {/* Grid pattern */}
       <div className="absolute inset-0 grid-pattern opacity-40" />
 
@@ -31,11 +31,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-8"
+          className="flex justify-center mb-6"
         >
           <span className="section-tag">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Suporte de TI Corporativo · 24x7
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            Redes · Cibersegurança · Infraestrutura
           </span>
         </motion.div>
 
@@ -45,7 +45,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="display-font ghost-text absolute inset-x-0 -top-8 md:-top-16 text-[18vw] md:text-[14vw] font-extrabold leading-none pointer-events-none select-none"
+            className="display-font ghost-text absolute inset-x-0 -top-6 md:-top-12 text-[14vw] md:text-[10vw] font-extrabold leading-none pointer-events-none select-none"
             aria-hidden
           >
             C3
@@ -55,65 +55,77 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="display-font relative text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight text-glow"
+            className="display-font relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-glow max-w-4xl mx-auto"
           >
-            Infraestrutura de TI <br />
-            que <span className="text-gradient">não para.</span> Nunca.
+            Conectividade <span className="text-gradient">confiável e segura</span> para empresas em todo o Brasil
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground"
+            className="mt-6 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground"
           >
-            Suporte especializado, redes corporativas, segurança digital e monitoramento 24x7 para empresas que não podem
-            se dar ao luxo de ficar offline.
+            Consultoria especialista em redes, Wi-Fi corporativo, firewall, backup em nuvem e monitoramento.
+            Implementamos e sustentamos ambientes de alto desempenho com pfSense, MikroTik, UniFi e Huawei.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center"
           >
             <a
               href="#contato"
-              className="btn-shimmer inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-primary-foreground"
+              className="btn-shimmer inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-primary-foreground"
             >
-              Falar com Especialista
-              <ArrowRight size={18} />
+              Solicitar proposta
+              <ArrowRight size={16} />
             </a>
             <a
-              href="#servicos"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-foreground border border-border hover:border-primary/50 hover:bg-surface transition-all"
+              href="https://wa.me/message/SXJMS25D6IM3P1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-foreground border border-border hover:border-primary/50 hover:bg-surface transition-all"
             >
-              Ver Serviços
+              Falar no WhatsApp
             </a>
           </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-5 text-xs text-muted-foreground"
+          >
+            Resposta rápida e diagnóstico gratuito · pfSense · MikroTik · UniFi · Huawei Certified
+          </motion.p>
         </div>
 
         {/* Floating stats */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto"
         >
           {[
-            { value: 500, suffix: "+", label: "Empresas atendidas" },
-            { value: 10, suffix: "+", label: "Anos de mercado" },
-            { value: 99.9, suffix: "%", label: "Uptime garantido", decimals: 1 },
-            { value: 24, suffix: "/7", label: "Monitoramento" },
+            { value: 120, prefix: "+", suffix: "", label: "Cidades atendidas" },
+            { value: 2500, prefix: "+", suffix: "", label: "Equipamentos gerenciados" },
+            { value: 2, prefix: "<", suffix: "h", label: "SLA médio" },
+            { value: 98, prefix: "", suffix: "%", label: "Satisfação" },
           ].map((s, i) => (
             <div
               key={i}
-              className="rounded-2xl border border-border bg-card/60 backdrop-blur-sm px-6 py-5 text-center hover:border-primary/40 transition-colors"
+              className="rounded-xl border border-border bg-card/60 backdrop-blur-sm px-4 py-4 text-center hover:border-primary/40 transition-colors"
             >
-              <div className="display-font text-3xl md:text-4xl font-extrabold text-gradient">
-                <CountUp end={s.value} suffix={s.suffix} duration={2.5} decimals={s.decimals || 0} enableScrollSpy scrollSpyOnce />
+              <div className="display-font text-2xl md:text-3xl font-extrabold text-gradient">
+                {s.prefix}
+                <CountUp end={s.value} duration={2.5} separator="." enableScrollSpy scrollSpyOnce />
+                {s.suffix}
               </div>
-              <div className="text-xs md:text-sm text-muted-foreground mt-1">{s.label}</div>
+              <div className="text-[11px] md:text-xs text-muted-foreground mt-1">{s.label}</div>
             </div>
           ))}
         </motion.div>
