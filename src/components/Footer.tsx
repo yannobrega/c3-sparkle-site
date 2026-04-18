@@ -1,0 +1,65 @@
+import { Linkedin, Instagram, Facebook, MapPin } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="border-t border-border bg-surface/40 pt-20 pb-10">
+      <div className="container-custom">
+        <div className="grid md:grid-cols-4 gap-12 mb-16">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-glow">
+                <span className="display-font text-primary-foreground font-extrabold">C3</span>
+              </div>
+              <span className="display-font font-bold text-xl">Support</span>
+            </div>
+            <p className="text-muted-foreground max-w-md leading-relaxed">
+              Suporte de TI corporativo, redes, segurança e infraestrutura. Para empresas que precisam de uma operação
+              sempre online.
+            </p>
+            <div className="flex gap-3 mt-8">
+              {[Linkedin, Instagram, Facebook].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-10 h-10 rounded-lg border border-border hover:border-primary hover:bg-primary/10 hover:text-primary flex items-center justify-center transition-all"
+                  aria-label="Social"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="display-font font-bold mb-5">Navegação</h4>
+            <ul className="space-y-3 text-muted-foreground">
+              <li><a href="#servicos" className="hover:text-foreground transition-colors">Serviços</a></li>
+              <li><a href="#metodologia" className="hover:text-foreground transition-colors">Metodologia</a></li>
+              <li><a href="#resultados" className="hover:text-foreground transition-colors">Resultados</a></li>
+              <li><a href="#cases" className="hover:text-foreground transition-colors">Cases</a></li>
+              <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
+              <li><a href="#contato" className="hover:text-foreground transition-colors">Contato</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="display-font font-bold mb-5">Bases</h4>
+            <ul className="space-y-3 text-muted-foreground">
+              <li className="flex items-start gap-2"><MapPin size={16} className="text-primary mt-1 shrink-0" /> Araruama-RJ</li>
+              <li className="flex items-start gap-2"><MapPin size={16} className="text-primary mt-1 shrink-0" /> Goiânia-GO</li>
+              <li className="flex items-start gap-2"><MapPin size={16} className="text-primary mt-1 shrink-0" /> Fortaleza-CE</li>
+            </ul>
+            <p className="text-xs text-muted-foreground mt-4">Atendimento em todo o Brasil</p>
+          </div>
+        </div>
+
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between gap-4 text-sm text-muted-foreground">
+          <div>© {new Date().getFullYear()} C3 Support. Todos os direitos reservados.</div>
+          <div>CNPJ disponível mediante solicitação · c3support.com.br</div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
