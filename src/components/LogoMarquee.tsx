@@ -1,13 +1,4 @@
-const partners = [
-  "pfSense",
-  "MikroTik",
-  "Ubiquiti UniFi",
-  "Huawei",
-  "Cisco",
-  "Fortinet",
-  "Veeam",
-  "Synology",
-];
+const partners = ["pfSense", "MikroTik", "Ubiquiti UniFi", "Huawei", "Cisco", "Fortinet", "Veeam", "Synology"];
 
 const clients = [
   "SD Informática",
@@ -59,15 +50,6 @@ const LogoMarquee = () => {
             >
               {p}
             </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="container-custom">
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
-          <span className="font-semibold uppercase tracking-widest text-[10px]">Parceiros tecnológicos:</span>
-          {partners.map((p) => (
-            <span key={p} className="hover:text-primary transition-colors">{p}</span>
           ))}
         </div>
       </div>
